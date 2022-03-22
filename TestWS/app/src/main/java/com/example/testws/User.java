@@ -1,12 +1,32 @@
 package com.example.testws;
 
+import com.google.gson.annotations.SerializedName;
+
 public class User {
 
+    @SerializedName("id")
+    private int id;
+    @SerializedName("name")
     private String name;
+    @SerializedName("email")
     private String email;
 
     public User() {
 
+    }
+
+
+    public User(String name, String email) {
+        this.name= name;
+    this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -17,10 +37,6 @@ public class User {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "User: " + "name =" + name +" email = " + email + '\n';
-    }
 
     public String getEmail() {
         return email;
@@ -28,5 +44,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
